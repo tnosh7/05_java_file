@@ -25,6 +25,8 @@ public class FileEx04_풀이 {
 		
 		for (int i = 0; i < moneys.length; i++) {
 			data += names[i] + "/" + pws[i] + "/" + moneys[i] + "\n";
+			//data += names[i] ; 이런식으로 
+			//data +=  "/";   하나씩 . 
 		}
 		
 		try {													//변수저장할 때 try /catch문 밖에서 하기 . 
