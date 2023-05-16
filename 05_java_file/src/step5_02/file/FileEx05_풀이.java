@@ -32,22 +32,22 @@ public class FileEx05_풀이 {
 				fr = new FileReader(file);
 				br = new BufferedReader(fr);
 				
-				String data = br.readLine();
 				// System.out.println(data); 확인용.
-				
-				for (int i = 0; i < moneys.length; i++) {
-					String[]temp = data.split(" ");
-					System.out.println(temp[i]);
-				}
-				
-				
+				int i= 0;
 				while (true) {
-					if (data == null) {
-						break;
+						String data = br.readLine();
+						if (data== null) {
+							break;
+						}
+						String[]temp = data.split("/");
+						names[i] = temp[0];
+						pws[i] = temp[1];
+						moneys[i] = Integer.parseInt(temp[2]);
 					}
-					data = br.readLine();
-					System.out.println(data);
+					i++;
 				}
+				
+				
 			} catch(Exception e) {
 				e.printStackTrace();
 			} finally {
