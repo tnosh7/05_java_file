@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 
 //# 파일 로드하기 : 연습문제
 
@@ -32,21 +33,23 @@ public class FileEx05_풀이 {
 				fr = new FileReader(file);
 				br = new BufferedReader(fr);
 				
-				// System.out.println(data); 확인용.
 				int i= 0;
-				while (true) {
-						String data = br.readLine();
-						if (data== null) {
-							break;
-						}
-						String[]temp = data.split("/");
-						names[i] = temp[0];
-						pws[i] = temp[1];
-						moneys[i] = Integer.parseInt(temp[2]);
+				
+				while (i < 3) {
+					String data = br.readLine();
+					if (data== null) {
+						break;
 					}
+					String[]temp = data.split("/");
+					System.out.println(Arrays.toString(temp));
+					names[i] = temp[0];
+					pws[i] = temp[1];
+					moneys[i] = Integer.parseInt(temp[2]);
 					i++;
 				}
-				
+				for (int j = 0; j < names.length; j++) {
+					System.out.println(names[j]+ " : "+pws[j]+ " : "+ moneys[j]);
+				}
 				
 			} catch(Exception e) {
 				e.printStackTrace();
