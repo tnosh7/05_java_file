@@ -20,7 +20,7 @@ public class FileEx08_정답예시 {
 		String[] pws = {"1111",   "2222", "3333"};
 		String[] items = {"사과", "바나나", "딸기"};
 		
-		int[][] cart = new int[100][2];
+		int[][] cart = new int[100][2]; // 열이 두갸 
 
 		String fileName = "cart.txt";
 		
@@ -32,8 +32,8 @@ public class FileEx08_정답예시 {
 			System.out.println("-----------");
 			for (int i = 0; i < ids.length; i++) {
 				System.out.print(ids[i] + " : " + pws[i] + "(");
-				for (int j = 0; j < count; j++) {
-					if (cart[j][0] == i) {
+				for (int j = 0; j < count; j++) {//
+					if (cart[j][0] == i) {///
 						if 		(cart[j][1] == 1) System.out.print("사과");
 						else if (cart[j][1] == 2) System.out.print("바나나");	
 						else if (cart[j][1] == 3) System.out.print("딸기");
@@ -106,9 +106,9 @@ public class FileEx08_정답예시 {
 					System.out.print("[쇼핑]상품번호를 선택하세요 : ");
 					int idx = scan.nextInt();
 					
-					cart[count][0] = log;
-					cart[count][1] = idx;
-					count++;
+					cart[count][0] = log;//?			
+					cart[count][1] = idx;//>>>?>>//상품번호를 차례대로 저장 
+					count++;//
 					System.out.println("[메세지]장바구니에 담겼습니다.");
 				}
 				else {
@@ -122,7 +122,7 @@ public class FileEx08_정답예시 {
 					System.out.println("[" + ids[log] + "님의 장바구니]");
 					int j = 0;
 					for (int i = 0; i < count; i++) {
-						if (log == cart[i][0]) {
+						if (log == cart[i][0]) {//
 							System.out.print((j+1) + ".");
 							if      (cart[i][1] == 1) System.out.println("사과");
 							else if (cart[i][1] == 2) System.out.println("바나나");
@@ -178,12 +178,12 @@ public class FileEx08_정답예시 {
 						fr = new FileReader(file);
 						br = new BufferedReader(fr);
 
-						count = 0;
-						String line = br.readLine();
-						while (line != null) {
-							String[] temp = line.split("/");
-							cart[count][0] = Integer.parseInt(temp[0]);
-							cart[count][1] = Integer.parseInt(temp[1]);
+						count = 0;//
+						String line = br.readLine();//대문자L조심
+						while (line != null) {//
+							String[] temp = line.split("/");//
+							cart[count][0] = Integer.parseInt(temp[0]);//
+							cart[count][1] = Integer.parseInt(temp[1]);//
 							
 							count++;
 							

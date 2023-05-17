@@ -50,7 +50,7 @@ public class FileEx06_정답예시 {
 					for (int i = 0; i < elementCnt; i++) {
 						arrayList[i] = temp[i];
 					}
-					temp = null;
+					temp = null;					//초기화 잊지말기 
 				}
 				System.out.print("[추가]데이터 입력 : ");
 				int data = scan.nextInt();
@@ -64,7 +64,7 @@ public class FileEx06_정답예시 {
 				System.out.print("[삭제]인덱스 입력 : ");
 				int delIdx = scan.nextInt();
 				
-				if (elementCnt - 1 < delIdx || delIdx < 0) {
+				if (elementCnt - 1 < delIdx || delIdx < 0) {			//인덱스 길이에서 -1 꼭 해주기   
 					System.out.println("[메세지]해당 위치는 삭제할 수 없습니다.");
 					continue;
 				}
@@ -78,12 +78,12 @@ public class FileEx06_정답예시 {
 					
 					int j = 0;
 					for (int i = 0; i < elementCnt; i++) {
-						if (i != delIdx) {
+						if (i != delIdx) {					//delIdx 제외시키기 !!!!
 							arrayList[j] = temp[i];
 							j++;
 						}
 					}
-					temp = null;
+					temp = null;//
 				}
 				elementCnt--;
 				
@@ -91,12 +91,12 @@ public class FileEx06_정답예시 {
 			else if(sel == 3) {		
 				
 				String data = "";
-				if (elementCnt > 0) {
+				if (elementCnt > 0) {							//인덱스 없을때는 동작안함 
 					for (int i = 0; i < elementCnt; i++) {
 						data += arrayList[i];
 						data += "\n";
 					}
-					data = data.substring(0, data.length() - 1);
+					data = data.substring(0, data.length() - 1); //이거 왜하지?
 					
 					FileWriter fw = null;
 					try {
@@ -109,7 +109,7 @@ public class FileEx06_정답예시 {
 					}
 				} 
 				else {
-					System.out.println("[메세지]저장할 데이터가 없습니다.");
+					System.out.println("[메세지]저장할 데이터가 없습니다.");	
 				}
 				
 			}
@@ -133,18 +133,18 @@ public class FileEx06_정답예시 {
 							if (line == null) {
 								break;
 							}
-							data += line;
-							data += "\n";
+							data += line;			//data에 옮기기 근데 뭐하러 ? 
+							data += "\n";			//개행 
 						}
-						data = data.substring(0, data.length() - 1);//
+						data = data.substring(0, data.length() - 1);// ??
 						
 						String[] temp = data.split("\n");
-						elementCnt = temp.length;
+						elementCnt = temp.length;					//인덱스 길이 
 						
 						arrayList = new int[elementCnt];
 						
-						for (int i = 0; i < elementCnt; i++) {
-							arrayList[i] = Integer.parseInt(temp[i]);
+						for (int i = 0; i < elementCnt; i++) {		
+							arrayList[i] = Integer.parseInt(temp[i]);	//숫자로 형변환해주기 
 						}
 					} catch (Exception e) {
 						e.printStackTrace();

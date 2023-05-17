@@ -92,7 +92,7 @@ public class FileEx07_정답예시 {
             else if (sel == 2) {
             	
                 if (identifier != -1) {
-                    for (int i = identifier; i < accsCnt-1; i++) {//보충
+                    for (int i = identifier; i < accsCnt-1; i++) {//보충 
                         accs[i] = accs[i + 1];
                         pws[i] = pws[i + 1];
                         moneys[i] = moneys[i + 1];
@@ -115,7 +115,7 @@ public class FileEx07_정답예시 {
                     System.out.print("[로그인]비밀번호 입력 : ");
                     String pw = scan.next();
 
-                    for (int i = 0; i < accsCnt; i++) {
+                    for (int i = 0; i < accsCnt; i++) { //accsCnt 쓰는 거 잊지 말기 안그럼 오류남 
                         if (accs[i].equals(acc) && pws[i].equals(pw)) {
                             identifier = i;
                         }
@@ -251,7 +251,7 @@ public class FileEx07_정답예시 {
                 
             	File file = new File(fileName);
 
-                if (file.exists()) {
+                if (file.exists()) {//
                     
                 	FileReader fr = null;
                     BufferedReader br = null;
@@ -274,10 +274,10 @@ public class FileEx07_정답예시 {
                         
                         data = data.substring(0, data.length()-1);
                         String[] temp = data.split("\n");
-                        accsCnt = temp.length;
+                        accsCnt = temp.length;//				//temp.length 굳이 왜하지? 
 
                         for (int i = 0; i < accsCnt; i++) {
-                            String[] info = temp[i].split("/");
+                            String[] info = temp[i].split("/");//
                             accs[i] = info[0];
                             pws[i] = info[1];
                             moneys[i] = Integer.parseInt(info[2]);
