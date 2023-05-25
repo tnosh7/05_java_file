@@ -30,8 +30,7 @@ public class ExceptionEx01 {
 			
 		} catch (ArithmeticException e) {
 			System.out.println("연산 에러 catch");
-			e.printStackTrace();
-			
+			e.printStackTrace();			
 		} catch (Exception e) {
 			System.out.println("모든 에러 catch");
 			e.printStackTrace();
